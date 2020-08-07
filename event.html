@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event e Prevent</title>
+</head>
+
+    
+<body>
+    <div id="app">      
+        <form v-on:submit.prevent="alterarNome('Monte')">       <!--o .prevent nessa linha, ja tem a preveção do valor dado-->
+            <input type="text" v-model="DigitarTexto"/>
+            <button type="submit">          <!--button submit envia dados do sformulário para servidor-->
+                Adicionar
+            </button>
+        </form>    
+
+        </form>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> <!--Primeiro carrega comando, após faz script-->
+
+    <script>
+        new Vue ({          
+            
+            el: '#app',    
+            data:{              
+                DigitarTexto: "",
+            },
+            methods: {
+                alterarNome(sobrenome, event){     
+                    this.DigitarTexto = "Monte";     // Toda vez para manipular uma propriedade, trabalhamos com this.
+                }
+            },
+            
+        })
+
+
+    </script>
+
+    
+</body>
+</html>
